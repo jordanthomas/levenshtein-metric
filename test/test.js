@@ -16,6 +16,9 @@ describe('distance', function() {
 
     var value3 = distance('METRIC', 'EMRTCI');
     assert.equal(value3, 3);
+
+    var value4 = distance('EQUAL', 'EQUAL');
+    assert.equal(value4, 0);
   });
 
   it('should should ignore case when asked', function() {
