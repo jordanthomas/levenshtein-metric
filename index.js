@@ -1,7 +1,21 @@
 (function (root) {
   'use strict';
 
-  function distance(s, t) {
+  function extend(a, b) {
+    for (var property in b) {
+      if (b.hasOwnProperty(property)) {
+        a[property] = b[property];
+      }
+    }
+
+    return a;
+  }
+
+  function distance(s, t, options) {
+    var defaults = { caseSensitive: true };
+    var settings = extend(defaults, options);
+
+    // Exit early if identical.
     if (s === t) {
       return 0;
     }
@@ -12,6 +26,12 @@
 
     if (t.length === 0) {
       return t.length;
+    }
+
+    // Convert to upper if case-sensitive is false.
+    if (!settings.caseSensitive) {
+      s = s.toUpperCase();
+      t = t.toUpperCase();
     }
 
     var v0 = new Array(t.length + 1);
