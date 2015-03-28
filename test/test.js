@@ -8,7 +8,6 @@ describe('distance', function() {
   });
 
   it('should return the right distance', function() {
-
     var value1 = distance('LEVENSHTEIN', 'ELVENSHTEIN');
     assert.equal(value1, 1);
 
@@ -17,5 +16,11 @@ describe('distance', function() {
 
     var value3 = distance('METRIC', 'EMRTCI');
     assert.equal(value3, 3);
+  });
+
+  it('should should ignore case when asked', function() {
+    var on  = distance('lEvEnShTeIn', 'LeVeNsHtEiN', { caseSensitive: false });
+    var off = distance('levenshtein', 'levenshtein');
+    assert.equal(on, off);
   });
 });
