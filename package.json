@@ -1,6 +1,6 @@
 {
   "name": "levenshtein-metric",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Levenshtein distance metric for node and browser.",
   "main": "index.js",
   "scripts": {
