@@ -21,6 +21,15 @@ describe('distance', function() {
     assert.equal(value4, 0);
   });
 
+  it ('should return the length of the non-empty argument', function() {
+    var test     = 'teststring';
+    var firstArg = distance(test, '');
+    var secArg   = distance('', test);
+
+    assert.equal(firstArg, test.length);
+    assert.equal(secArg, test.length);
+  });
+
   it('should should ignore case when asked', function() {
     var on  = distance('lEvEnShTeIn', 'LeVeNsHtEiN', { caseSensitive: false });
     var off = distance('levenshtein', 'levenshtein');
