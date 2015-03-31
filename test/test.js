@@ -14,8 +14,8 @@ describe('distance', function() {
     var value2 = distance('DISTANCE', 'SDTIANCE');
     assert.equal(value2, 2);
 
-    var value3 = distance('METRIC', 'EMRTCI');
-    assert.equal(value3, 3);
+    var value1 = distance('KITTEN', 'SITTING');
+    assert.equal(value1, 3);
 
     var value4 = distance('EQUAL', 'EQUAL');
     assert.equal(value4, 0);
