@@ -7,6 +7,11 @@ describe('distance', function() {
     assert.typeOf(value, 'number');
   });
 
+  it ('should return zero if the strings are equal', function() {
+    var zero = distance('EQUAL', 'EQUAL');
+    assert.equal(zero, 0);
+  });
+
   it('should return the right distance', function() {
     var value1 = distance('LEVENSHTEIN', 'ELVENSHTEIN');
     assert.equal(value1, 1);
@@ -16,9 +21,6 @@ describe('distance', function() {
 
     var value1 = distance('KITTEN', 'SITTING');
     assert.equal(value1, 3);
-
-    var value4 = distance('EQUAL', 'EQUAL');
-    assert.equal(value4, 0);
   });
 
   it ('should return the length of the non-empty argument', function() {
