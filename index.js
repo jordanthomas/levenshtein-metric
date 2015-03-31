@@ -21,11 +21,11 @@
     }
 
     if (s.length === 0) {
-      return s.length;
+      return t.length;
     }
 
     if (t.length === 0) {
-      return t.length;
+      return s.length;
     }
 
     // Convert to upper if case-sensitive is false.
